@@ -63,3 +63,5 @@ env/
 .idea/
 .DS_Store
 Thumbs.db
+
+bin/FETCH_TAXID_README.md

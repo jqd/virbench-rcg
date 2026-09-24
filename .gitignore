@@ -1,0 +1,65 @@
+# ------------------------------
+# Nextflow runtime artifacts
+# ------------------------------
+.nextflow/
+.nextflow*
+work/
+
+# Nextflow reports and logs (generated)
+report.html
+timeline.html
+trace.txt
+*.nextflow.log
+.nextflow.log*
+
+# ------------------------------
+# Pipeline outputs and test runs
+# ------------------------------
+results/
+results_*/
+*_results/
+
+# Local test output directories used in this project
+# (keep test input configs/scripts in git, ignore generated outputs)
+test_default/
+test_refseq/
+
+# ------------------------------
+# Scheduler / cluster logs
+# ------------------------------
+*.o
+*.e
+*.out
+*.err
+*.log
+
+# ------------------------------
+# Local environment and secrets
+# ------------------------------
+virbench_env.sh
+.env
+.env.*
+
+# ------------------------------
+# Python caches
+# ------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ------------------------------
+# Conda / virtual environment folders
+# ------------------------------
+.conda/
+.venv/
+venv/
+env/
+
+# ------------------------------
+# Editor / OS files
+# ------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,30 @@
+name: virbench-rcg
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - pip
+
+  - r-base=4.4
+  - r-tidyverse
+  - r-optparse
+
+  - fastp
+  - bowtie2
+  - samtools
+  - megahit
+  - spades
+  - blast
+  - kaiju
+  - mmseqs2
+  - kraken2
+  - cd-hit
+  - taxonkit
+  - datamash
+  - gawk
+  - coreutils
+  - openjdk=8
+

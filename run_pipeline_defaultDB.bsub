@@ -1,0 +1,25 @@
+#!/bin/bash
+#BSUB -P nextflow
+#BSUB -q standard
+#BSUB -J nextflow
+#BSUB -o nextflow_test_default.o
+#BSUB -e nextflow_test_default.e
+#BSUB -W 168:00
+#BSUB -M 4GB
+module load nextflow/23.10.0
+
+ENV_FILE="${VIRBENCH_ENV_FILE:-./virbench_env.sh}"
+if [[ -f "$ENV_FILE" ]]; then
+	source "$ENV_FILE"
+else
+	echo "ERROR: Environment file not found: $ENV_FILE"
+	echo "Create it from virbench_env.example.sh and update paths."
+	exit 1
+fi
+
+nextflow -C nextflow.config run main.nf --samples samples.tsv \
+	--assembler both \
+	--outdir test_default \
+	--skip_metrics false \
+	--skip_remove_host true \
+	-profile lsf,db_default -resume -qs 300

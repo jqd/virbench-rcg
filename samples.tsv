@@ -1,0 +1,2 @@
+sample_id	fq1	fq2
+23_viruses	./data/23_viruses_50k/23_viruses_merged_50k_R1.fq.gz	./data/23_viruses_50k/23_viruses_merged_50k_R2.fq.gz

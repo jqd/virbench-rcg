@@ -28,8 +28,8 @@ def generate_taxon_lineage_with_taxonkit(taxids, ncbi_taxonomy_dir):
             tmp_file.write(f"{int(taxid)}\n")
     
     try:
-        # Run taxonkit reformat to get lineage
-        cmd = f"cat {tmp_taxid_file} | ~/vir_pipelines/redo_2025/taxonkit_results/taxonkit reformat2 -I 1 --data-dir {ncbi_taxonomy_dir} -r 'Unclassified'"
+        # Run taxonkit from PATH (e.g., active conda environment)
+        cmd = f"cat {tmp_taxid_file} | taxonkit reformat2 -I 1 --data-dir {ncbi_taxonomy_dir} -r 'Unclassified'"
         
         result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
         

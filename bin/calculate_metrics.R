@@ -193,7 +193,7 @@ write_tsv(unique_taxons, temp_taxon_file, col_names = FALSE)
 
 # Call taxonkit to get lineage
 taxonkit_cmd <- sprintf(
-  "cat %s | ~/vir_pipelines/redo_2025/taxonkit_results/taxonkit reformat2 -I 1 --data-dir %s -r 'Unclassified' > combined_taxons_lineage_%s.tsv",
+  "cat %s | taxonkit reformat2 -I 1 --data-dir %s -r 'Unclassified' > combined_taxons_lineage_%s.tsv",
   temp_taxon_file, params$ncbi_taxonomy_dir, assembler
 )
 
